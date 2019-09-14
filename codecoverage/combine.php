@@ -17,7 +17,7 @@
     }
 
     #add the directories where source code files exists
-    $final_coverage->filter()->addDirectoryToWhitelist("/var/www/html/");
+    $final_coverage->filter()->addDirectoryToWhitelist("/home/soh/git/uc-php/dependencies/ucphp_php_apps");
     
     echo "Generating final report..." . PHP_EOL;
     $report = new \SebastianBergmann\CodeCoverage\Report\Html\Facade;

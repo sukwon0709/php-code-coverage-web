@@ -6,7 +6,7 @@
 
     $coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
     $filter = $coverage->filter();
-    $filter->addDirectoryToWhitelist("/var/www/html");
+    $filter->addDirectoryToWhitelist("/home/soh/git/uc-php/dependencies/ucphp_php_apps");
 
 
     $test_name = (isset($_COOKIE['test_name']) && !empty($_COOKIE['test_name'])) ? $_COOKIE['test_name'] : 'unknown_test_' . time();

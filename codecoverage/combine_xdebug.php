@@ -9,7 +9,7 @@
     $count = count($coverages);
     $i = 0;
 
-    $final_coverage->filter()->addDirectoryToWhitelist("/var/www/html/");
+    $final_coverage->filter()->addDirectoryToWhitelist("/home/soh/git/uc-php/dependencies/ucphp_php_apps");
 
     foreach ($coverages as $coverage_file)
     {
