@@ -9,6 +9,7 @@ $seen_coverage_files = array();
 
 $final_coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
 $final_coverage->filter()->addDirectoryToWhitelist("/home/soh/git/uc-php/dependencies/ucphp_php_apps");
+$final_coverage->filter()->addDirectoryToWhitelist("/home/soh/git/uc-php/dependencies/ucphp_php_apps", '.inc', '');
 
 $coverages = glob("coverages/*.json");
 $new_coverage_files = array_diff($coverages, $seen_coverage_files);
