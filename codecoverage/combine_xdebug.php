@@ -3,17 +3,13 @@
 include_once("vendor/autoload.php");
 
 #increase the memory in multiples of 128M in case of memory error
-ini_set('memory_limit', '12800M');
-
-$seen_coverage_files = array();
+ini_set('memory_limit', '128M');
 
 $final_coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
 $final_coverage->filter()->addDirectoryToWhitelist("/home/soh/git/uc-php/dependencies/ucphp_php_apps");
 $final_coverage->filter()->addDirectoryToWhitelist("/home/soh/git/uc-php/dependencies/ucphp_php_apps", '.inc', '');
 
-$coverages = glob("coverages/*.json");
-$new_coverage_files = array_diff($coverages, $seen_coverage_files);
-
+$new_coverage_files = glob("coverages/*.json");
 $count = count($new_coverage_files);
 $i = 0;
 
@@ -24,7 +20,6 @@ foreach ($new_coverage_files as $coverage_file)
     $codecoverageData = json_decode(file_get_contents($coverage_file), JSON_OBJECT_AS_ARRAY);
     $test_name = str_ireplace("coverage-", "", basename($coverage_file,".json"));
     $final_coverage->append($codecoverageData, $test_name);
-    array_push($seen_coverage_files, $coverage_file);
 }
 
 echo "Generating final report..." . PHP_EOL;
