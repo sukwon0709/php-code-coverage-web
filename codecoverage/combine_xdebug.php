@@ -2,8 +2,8 @@
 
 include_once("vendor/autoload.php");
 
-#increase the memory in multiples of 128M in case of memory error
-ini_set('memory_limit', '128M');
+#increase the memory in multiples of 512M in case of memory error
+ini_set('memory_limit', '512M');
 
 $final_coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
 $final_coverage->filter()->addDirectoryToWhitelist("/home/soh/git/uc-php/dependencies/ucphp_php_apps");

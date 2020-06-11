@@ -1,4 +1,4 @@
 {
     "require" : {
-    "phpunit/php-code-coverage":"4.*"    }
+    "phpunit/php-code-coverage":"^8.0"    }
 }
